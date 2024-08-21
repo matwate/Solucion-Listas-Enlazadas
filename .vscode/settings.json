@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "list": "cpp",
+        "ostream": "cpp"
+    },
+    "editor.defaultFormatter": "mikoz.composite-formatter"
+}
