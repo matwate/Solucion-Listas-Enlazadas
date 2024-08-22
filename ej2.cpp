@@ -1,34 +1,36 @@
 #include <list.h>
 
-// Ejercicio 2
-/* 
-
-    Intercambia 2 elementos adyacentes ajustando unicamente los enlaces
-    y no los datos usando una lista doblemente enlazada
-*/
-
-void Solucion(List<int> &L, int pos1, int pos2){
-    // Check if the positions are valid
-    if (pos1 < 0 || pos2 < 0 || pos1 >= L.size() - 1 || pos2 >= L.size() - 1) {
-        // Handle invalid positions
-        return;
-    }
+auto Solucion(List<int> l, int idx1, int idx2){
     
-    // Get the nodes at the specified positions
-    auto beg_it = L.begin();
-    for (int i = 0; i < pos1; i++) {
-        ++beg_it;
+    // Hallamos el iterador en la posicion idx1
+    auto it1 = l.begin();
+    for (int i = 0; i < idx1 && it1 != l.end(); i++) {
+        ++it1;
     }
-    auto  node1 = *beg_it;
 
-    beg_it = L.begin();
-    for (int i = 0; i < pos2 - pos1; i++) {
-        ++beg_it;
+    // El iterador ahora mismo se encuentra en la posicion idx1
+
+    auto it2 = l.begin();
+    for (int i = 0; i < idx2 && it2 != l.end(); i++) {
+        ++it2;
     }
-    auto node2 = *beg_it;
 
-    // Este lo voy a dejar incompleto porque no veo como retornar el Nodo, la dereferencia retorna el valor del nodo
+    // El iterador ahora mismo se encuentra en la posicion idx2
+
+    // Verificamos que los iteradores no esten en el final de la lista
+    if (it1 == l.end() || it2 == l.end()) {
+        throw std::runtime_error("Index out of bounds");
+    }
+
+    if (it1 == it2) {
+        throw std::runtime_error("El profesor no fue explicito en el enunciado por lo que no se que hacer en este caso");
+    }
+    // Guardamos los valores 
+    auto val1 = *it1;
+    auto val2 = *it2;
+
+
+    // Y despues de leer suficiente, no se puede realizar porque no existen metodos publicos los cuales permitan acceder a prev y next de un nodo de la lista
+
 
 }
-
-
